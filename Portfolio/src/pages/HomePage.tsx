@@ -1,24 +1,24 @@
 "use client";
 
-import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
-import { Button } from "../components/ui/Button"
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { Button } from "../components/ui/Button";
 // import { Badge } from "../components/ui/Badge"
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 export function HomePage() {
-  const navigate = useNavigate()
-  const [scrollY, setScrollY] = useState(0)
+  const navigate = useNavigate();
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY)
-    }
+      setScrollY(window.scrollY);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const codeSnippet = `
 const Portfolio = () => {                                              
@@ -36,7 +36,7 @@ const Portfolio = () => {
         github="https://github.com/Jayasuriya033"/>                                   
     </div>
   );
-};`.split("")
+};`.split("");
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-background pt-2">
@@ -54,8 +54,9 @@ const Portfolio = () => {
         }}
       />
 
+
       <div className="container relative z-10 px-4 pt-32 pb-20 md:pt-40 md:pb-32">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6 items-center">
           {/* Left content */}
           <div className="space-y-8">
             <div>
@@ -93,8 +94,9 @@ const Portfolio = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                Specialized in creating modern, responsive web applications with React, TypeScript, and Node.js. Focused
-                on clean code, performance, and user experience.
+                Specialized in creating modern, responsive web applications with
+                React, TypeScript, and Node.js. Focused on clean code,
+                performance, and user experience.
               </motion.p>
             </div>
 
@@ -171,7 +173,9 @@ const Portfolio = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.5 }}
         >
-          <span className="text-sm text-muted-foreground mb-2">Scroll to explore</span>
+          <span className="text-sm text-muted-foreground mb-2">
+            Scroll to explore
+          </span>
           <motion.div
             className="w-6 h-10 border-2 border-muted-foreground rounded-full flex justify-center"
             animate={{ y: [0, 5, 0] }}
@@ -186,6 +190,5 @@ const Portfolio = () => {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
-
