@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Code2, Database, Laptop } from "lucide-react";
+// import { Code2, Database, Laptop } from "lucide-react";
 
 export function AboutPage() {
   const [ref, inView] = useInView({
@@ -15,24 +15,24 @@ export function AboutPage() {
     visible: { opacity: 1, y: 0 },
   };
 
-  const skills = [
-    {
-      icon: <Code2 className="h-6 w-6 text-primary" />,
-      title: "Frontend Development",
-      description:
-        "Building responsive web applications with modern frameworks",
-    },
-    {
-      icon: <Database className="h-6 w-6 text-primary" />,
-      title: "Backend Development",
-      description: "Creating robust and scalable server-side solutions",
-    },
-    {
-      icon: <Laptop className="h-6 w-6 text-primary" />,
-      title: "Full Stack Integration",
-      description: "Connecting frontend and backend for seamless applications",
-    },
-  ];
+  // const skills = [
+  //   {
+  //     icon: <Code2 className="h-6 w-6 text-primary" />,
+  //     title: "Frontend Development",
+  //     description:
+  //       "Building responsive web applications with modern frameworks",
+  //   },
+  //   {
+  //     icon: <Database className="h-6 w-6 text-primary" />,
+  //     title: "Backend Development",
+  //     description: "Creating robust and scalable server-side solutions",
+  //   },
+  //   {
+  //     icon: <Laptop className="h-6 w-6 text-primary" />,
+  //     title: "Full Stack Integration",
+  //     description: "Connecting frontend and backend for seamless applications",
+  //   },
+  // ];
 
   return (
     <section className="py-20 bg-gradient-to-b from-background to-muted/30 pt-20">
@@ -61,76 +61,99 @@ export function AboutPage() {
                 <img
                   src="/assets/profile.webp"
                   alt="Jayasuriya"
-                  className="w-full h-full object-cover rounded-lg shadow-lg border-4 border-gray-300"
+                  className="w-full h-full object-cover rounded-lg shadow-lg border-4 border-gray-600"
                 />
               </div>
             </div>
           </motion.div>
+          {/* <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative"
+          >
+            <div>
+              <h2 className="text-lg font-semibold text-primary">
+                “First, solve the problem. Then, write the code.”
+              </h2>
+              <p className="text-sm text-muted-foreground mb-6">
+                — This mindset guides my approach to building efficient and
+                thoughtful software.
+              </p>
+            </div>
+          </motion.div> */}
 
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="space-y-8"
+            // className="space-y-4"
           >
             <div>
-              <h3 className="text-2xl font-bold mb-4 text-primary">
-                Full-Stack Developer
-              </h3>
+              <h1 className="text-3xl font-bold mb-4 text-primary">
+                Who Am I?
+              </h1>
               <p className="text-muted-foreground mb-6">
-                I'm a passionate full-stack developer with expertise in modern
-                web technologies. I specialize in building responsive,
-                performant, and user-friendly applications using React,
-                TypeScript, and Node.js.
+                Hi, I'm <strong> Jayasuriya G</strong>, a passionate{" "}
+                <strong> Full-Stack Developer</strong> from Tamil Nadu, India. I
+                specialize in building secure, scalable, and high-performance
+                full stack web applications using modern technologies like{" "}
+                <strong>
+                  React, Angular, Node.js, Express, Prisma ORM, MySQL/PostgreSQL
+                  and etc.
+                </strong>{" "}
+                .
               </p>
               <p className="text-muted-foreground mb-6">
-                With a strong foundation in both frontend and backend
-                development, I create seamless experiences that solve real-world
-                problems. I'm constantly learning and exploring new technologies
-                to stay at the cutting edge of web development.
+                With a Bachelor's degree in{" "}
+                <strong>Computer Science and Engineering</strong> and hands-on
+                experience at <strong>Techaffinity Consulting Pvt. Ltd</strong>,
+                I've worked on impactful projects such as{" "}
+                <strong>Cmart </strong>(Magazine Publication) and{" "}
+                <strong> Wild Game Butcher</strong> (SaaS Model)—where I was
+                responsible for implementing{" "}
+                <strong>
+                  dashboards, APIs, JWT-based authentication, Redis caching, and
+                  even real-time chat using WebSocket.io
+                </strong>
+                .
               </p>
             </div>
 
-            <div className="grid gap-6">
-              {skills.map((skill, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={
-                    inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-                  }
-                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                  className="flex items-start gap-4 p-4 rounded-lg bg-card border border-border hover:border-primary/50 transition-colors duration-300"
-                >
-                  <div className="mt-1">{skill.icon}</div>
-                  <div>
-                    <h4 className="font-semibold mb-1">{skill.title}</h4>
-                    <p className="text-sm text-muted-foreground">
-                      {skill.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: 0.9 }}
-              className="grid grid-cols-2 gap-4"
-            >
-              {[
-                "React & TypeScript",
-                "Node.js & Express",
-                "Tailwind CSS",
-                "MySQL & Prisma",
-              ].map((tech, index) => (
-                <div key={index} className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-primary"></div>
-                  <span>{tech}</span>
-                </div>
-              ))}
-            </motion.div> */}
+            <h1 className="text-xl font-bold mb-4 text-primary">Experience</h1>
+            <ul className="list-disc pl-5 space-y-4 text-muted-foreground">
+              <li>
+                <p className="font-semibold">
+                  Associate Software Engineer, Techaffinity, Bangalore{" "}
+                  <span className="font-normal">(Nov 2024 – Present)</span>
+                </p>
+                <p>
+                  Delivered responsive dashboards, secure APIs, and real-time
+                  chat functionalities across full-stack projects.
+                </p>
+              </li>
+              <li>
+                <p className="font-semibold">
+                  Full Stack Developer Intern, Techaffinity, Trichy{" "}
+                  <span className="font-normal">(May 2024 – Oct 2024)</span>
+                </p>
+                <p>
+                  Built a Kiosk System and a Book Store Management System with
+                  OTP-based recovery, admin/student modules, and JWT
+                  authentication.
+                </p>
+              </li>
+              <li>
+                <p className="font-semibold">
+                  Dotnet Intern, Virtusa Consulting, Chennai{" "}
+                  <span className="font-normal">(Jan 2023 – Jun 2023)</span>
+                </p>
+                <p>
+                  Trained in .NET, React, JavaScript, SQL, and more—successfully
+                  passed all assessments and secured a job offer.
+                </p>
+              </li>
+            </ul>
           </motion.div>
         </div>
       </div>
