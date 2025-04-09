@@ -211,7 +211,7 @@ export function SkillsPage() {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-6"
         >
           {skills.map((skill, index) => (
             <motion.div
