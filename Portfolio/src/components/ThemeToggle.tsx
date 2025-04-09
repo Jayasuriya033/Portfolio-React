@@ -8,7 +8,7 @@ import { HexColorPicker } from "react-colorful"
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme()
-  const [customColor, setCustomColor] = useState("#2803fc")
+  const [customColor, setCustomColor] = useState("#fca503")
   const [showColorPicker, setShowColorPicker] = useState(false)
   const colorPickerRef = useRef<HTMLDivElement>(null)
 

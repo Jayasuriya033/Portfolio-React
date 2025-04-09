@@ -35,7 +35,7 @@ export function AboutPage() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-muted/30 pt-25">
+    <section className="py-20 bg-gradient-to-b from-background to-muted/30 pt-20">
       <div className="container px-4">
         <motion.div
           ref={ref}

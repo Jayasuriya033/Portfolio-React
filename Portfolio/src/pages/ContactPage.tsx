@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 import type React from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -81,7 +81,7 @@ export function ContactPage() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-muted/30 pt-32">
+    <section className="py-20 bg-gradient-to-b from-background to-muted/30 pt-20">
       <div className="container px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -92,11 +92,15 @@ export function ContactPage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
           <div className="h-1 w-20 bg-primary mx-auto mb-6"></div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-          Have an exciting project idea or considering working together? I’d love to chat!
+            Have an exciting project idea or considering working together? I’d
+            love to chat!
           </p>
         </motion.div>
-
-        <div ref={ref} className="grid md:grid-cols-2 gap-12">
+        <div
+          ref={ref}
+          className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-6"
+        >
+          {/* <div ref={ref} className="grid md:grid-cols-2 gap-12"> */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
@@ -114,11 +118,13 @@ export function ContactPage() {
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
                 <div className="bg-primary p-3 rounded-full text-white">
-                  <Mail className="h-6 w-6" />
+                  <Mail className="h-5 w-5 sm:h-6 sm:w-6" />
                 </div>
                 <div>
-                  <h4 className="font-medium">Email</h4>
-                  <p className="text-muted-foreground">
+                  <h4 className="text-muted-foreground break-all text-sm sm:text-base">
+                    Email
+                  </h4>
+                  <p className="text-muted-foreground break-all text-sm sm:text-base">
                     jayasuriyaganesan2019@gmail.com
                   </p>
                 </div>
@@ -130,11 +136,15 @@ export function ContactPage() {
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
                 <div className="bg-primary p-3 rounded-full text-white">
-                  <Phone className="h-6 w-6" />
+                  <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
                 </div>
                 <div>
-                  <h4 className="font-medium">Phone</h4>
-                  <p className="text-muted-foreground">+91 6384091750</p>
+                  <h4 className="text-muted-foreground break-all text-sm sm:text-base">
+                    Phone
+                  </h4>
+                  <p className="text-muted-foreground break-all text-sm sm:text-base">
+                    +91 6384091750
+                  </p>
                 </div>
               </motion.div>
 
@@ -144,18 +154,59 @@ export function ContactPage() {
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
                 <div className="bg-primary p-3 rounded-full text-white">
-                  <MapPin className="h-6 w-6" />
+                  <MapPin className="h-5 w-5 sm:h-6 sm:w-6" />
                 </div>
                 <div>
-                  <h4 className="font-medium">Location</h4>
-                  <p className="text-muted-foreground">
+                  <h4 className="text-muted-foreground break-all text-sm sm:text-base">
+                    Location
+                  </h4>
+                  <p className="text-muted-foreground break-all text-sm sm:text-base">
                     Tiruchirapalli, Tamilnadu, India.
                   </p>
                 </div>
               </motion.div>
             </div>
-
             <div className="mt-12">
+              <h3 className="text-xl font-bold mb-4">Connect With Me</h3>
+              <div className="flex flex-wrap gap-4 max-w-full">
+                {[
+                  {
+                    href: "https://www.linkedin.com/in/jayasuriya-g/",
+                    icon: <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />,
+                  },
+                  {
+                    href: "https://github.com/Jayasuriya033",
+                    icon: <Github className="h-4 w-4 sm:h-5 sm:w-5" />,
+                  },
+                  {
+                    href: "#",
+                    icon: <Twitter className="h-4 w-4 sm:h-5 sm:w-5" />,
+                  },
+                  {
+                    href: "https://wa.me/6384091750",
+                    icon: <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />,
+                  },
+                  {
+                    href: "https://www.instagram.com/jayasuriya.ganesan_/?hl=en",
+                    icon: <Instagram className="h-4 w-4 sm:h-5 sm:w-5" />,
+                  },
+                ].map(({ href, icon }, index) => (
+                  <motion.a
+                    key={index}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-primary p-2 sm:p-3 rounded-full text-white shadow-lg"
+                    whileHover={{ y: -5, scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
+                    {icon}
+                  </motion.a>
+                ))}
+              </div>
+            </div>
+
+            {/* <div className="mt-12">
               <h3 className="text-xl font-bold mb-4">Connect With Me</h3>
               <div className="flex gap-4">
                 <motion.a
@@ -205,7 +256,7 @@ export function ContactPage() {
                   <Instagram className="h-5 w-5" />
                 </motion.a>
               </div>
-            </div>
+            </div> */}
           </motion.div>
 
           <motion.div
@@ -215,7 +266,7 @@ export function ContactPage() {
             className="bg-card p-8 rounded-lg border border-border shadow-lg"
           >
             <h3 className="text-2xl font-bold mb-6 text-primary flex items-center gap-2">
-              <Mail className="h-6 w-6" /> Send an Email
+              <Mail className="h-0 w-0 sm:h-6 sm:w-6" /> Send an Email
             </h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">

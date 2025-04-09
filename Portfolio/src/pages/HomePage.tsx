@@ -34,9 +34,8 @@ const Portfolio = () => {
       <Contact                                                            
         email="jayasuriyaganesan2019@gmail.com"
         github="https://github.com/Jayasuriya033"/>                                   
-    </div>
-  );
-};`.split("");
+    </div>                                                                       
+)};`.split("");
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-background pt-2">
@@ -54,18 +53,10 @@ const Portfolio = () => {
         }}
       />
 
-
       <div className="container relative z-10 px-4 pt-32 pb-20 md:pt-40 md:pb-32">
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6 items-center">
-          {/* Left content */}
           <div className="space-y-8">
             <div>
-              {/* <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-                <Badge variant="outline" className="px-3 py-1 text-sm border-primary/50 bg-primary/5">
-                  <span className="text-primary">Full Stack Developer</span>
-                </Badge>
-              </motion.div> */}
-
               <motion.h1
                 className="mt-6 text-5xl md:text-7xl font-bold tracking-tight"
                 initial={{ opacity: 0, y: 20 }}
@@ -108,7 +99,7 @@ const Portfolio = () => {
             >
               <Button
                 size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 group"
+                className=" bg-primary text-primary-foreground hover:bg-primary/90 group text-base sm:text-lg px-4 py-2 sm:px-6 sm:py-3 text-center w-full sm:w-auto  F"
                 onClick={() => navigate("/projects")}
               >
                 View My Work
@@ -125,9 +116,7 @@ const Portfolio = () => {
             </motion.div>
           </div>
 
-          {/* Right content - Code snippet */}
           <div className="relative">
-            {/* Code snippet animation */}
             <motion.div
               className="relative bg-black/90 rounded-xl p-6 shadow-xl border border-primary/20 font-mono text-sm text-green-400 overflow-hidden h-[350px] overflow-y-auto"
               initial={{ opacity: 0, y: 20 }}
@@ -158,17 +147,13 @@ const Portfolio = () => {
                   className="inline-block w-2 h-4 bg-green-400 ml-1"
                 />
               </div>
-
-              {/* Decorative elements */}
               <div className="absolute top-1/2 right-0 w-20 h-20 bg-primary/20 rounded-full blur-xl"></div>
               <div className="absolute bottom-0 left-1/4 w-16 h-16 bg-primary/20 rounded-full blur-xl"></div>
             </motion.div>
           </div>
         </div>
-
-        {/* Scroll indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:flex flex-col items-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.5 }}
