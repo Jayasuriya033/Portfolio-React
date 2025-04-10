@@ -7,17 +7,7 @@ import { Button } from "../components/ui/Button";
 import { Input } from "../components/ui/Input";
 import { Textarea } from "../components/ui/Textarea";
 import emailjs from "@emailjs/browser";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Send,
-  Linkedin,
-  Github,
-  Twitter,
-  Instagram,
-  MessageCircle,
-} from "lucide-react";
+import { Send } from "lucide-react";
 
 export function ContactPage() {
   const [ref, inView] = useInView({
@@ -117,8 +107,12 @@ export function ContactPage() {
                 whileHover={{ x: 5 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <div className="bg-primary p-3 rounded-full text-white">
-                  <Mail className="h-5 w-5 sm:h-6 sm:w-6" />
+                <div className="border border-graw-900 p-3 rounded-full text-white">
+                  <img
+                    src={"icons/email.png"}
+                    className="h-4 w-5 sm:h-6 sm:w-6"
+                    alt={`Email Icon`}
+                  />
                 </div>
                 <div>
                   <h4 className="text-muted-foreground break-all text-sm sm:text-base">
@@ -135,8 +129,12 @@ export function ContactPage() {
                 whileHover={{ x: 5 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <div className="bg-primary p-3 rounded-full text-white">
-                  <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
+                <div className="border border-graw-900 p-3 rounded-full text-white">
+                  <img
+                    src={"icons/phone.png"}
+                    className="h-4 w-5 sm:h-6 sm:w-6"
+                    alt={`Phone Icon`}
+                  />
                 </div>
                 <div>
                   <h4 className="text-muted-foreground break-all text-sm sm:text-base">
@@ -153,8 +151,12 @@ export function ContactPage() {
                 whileHover={{ x: 5 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <div className="bg-primary p-3 rounded-full text-white">
-                  <MapPin className="h-5 w-5 sm:h-6 sm:w-6" />
+                <div className="border border-graw-900 p-3 rounded-full text-white">
+                  <img
+                    src={"icons/location.svg"}
+                    className="h-4 w-5 sm:h-6 sm:w-6"
+                    alt={`Email Icon`}
+                  />
                 </div>
                 <div>
                   <h4 className="text-muted-foreground break-all text-sm sm:text-base">
@@ -168,27 +170,27 @@ export function ContactPage() {
             </div>
             <div className="mt-12">
               <h3 className="text-xl font-bold mb-4">Connect With Me</h3>
-              <div className="flex flex-wrap gap-4 max-w-full">
+              <div className="flex flex-wrap justify-around sm:justify-start gap-4 max-w-full">
                 {[
                   {
                     href: "https://www.linkedin.com/in/jayasuriya-g/",
-                    icon: <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />,
+                    icon: "icons/linkedin.png",
                   },
                   {
                     href: "https://github.com/Jayasuriya033",
-                    icon: <Github className="h-4 w-4 sm:h-5 sm:w-5" />,
+                    icon: "icons/github.png",
                   },
                   {
                     href: "#",
-                    icon: <Twitter className="h-4 w-4 sm:h-5 sm:w-5" />,
+                    icon: "icons/twitter.svg",
                   },
                   {
                     href: "https://wa.me/6384091750",
-                    icon: <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />,
+                    icon: "icons/whatsapp.png",
                   },
                   {
                     href: "https://www.instagram.com/jayasuriya.ganesan_/?hl=en",
-                    icon: <Instagram className="h-4 w-4 sm:h-5 sm:w-5" />,
+                    icon: "icons/instagram.png",
                   },
                 ].map(({ href, icon }, index) => (
                   <motion.a
@@ -196,11 +198,11 @@ export function ContactPage() {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-primary p-2 sm:p-3 rounded-full text-white shadow-lg"
+                    className="border border-graw-900 p-3 rounded-full text-white"
                     whileHover={{ y: -5, scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   >
-                    {icon}
+                    <img src={icon} className="h-5 w-5 sm:h-6 sm:w-6" />
                   </motion.a>
                 ))}
               </div>
@@ -266,7 +268,7 @@ export function ContactPage() {
             className="bg-card p-8 rounded-lg border border-border shadow-lg"
           >
             <h3 className="text-2xl font-bold mb-6 text-primary flex items-center gap-2">
-              <Mail className="h-0 w-0 sm:h-6 sm:w-6" /> Send an Email
+              Send an Email
             </h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
