@@ -71,11 +71,9 @@ export function ContactPage() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-muted/30 pt-20">
+    <section className="py-10 bg-gradient-to-b from-background to-muted/30 pt-10 sm:pt-20">
       <div className="container px-4">
-        <motion.div
-          className="text-center mb-16"
-        >
+        <motion.div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
           <div className="h-1 w-20 bg-primary mx-auto mb-6"></div>
           <p className="text-muted-foreground max-w-2xl mx-auto">

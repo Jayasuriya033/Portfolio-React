@@ -68,7 +68,8 @@ export function SkillsPage() {
     {
       icon: "/icons/cloud.gif",
       title: "Cloud Tech",
-      description: "Cloud technology enables easy access to data from anywhere, at any time.",
+      description:
+        "Cloud technology enables easy access to data from anywhere, at any time.",
       color: "bg-primary",
       technologies: [
         "/icons/aws.svg",
@@ -82,8 +83,7 @@ export function SkillsPage() {
     {
       icon: "/icons/datastructure.gif",
       title: "Data Structure",
-      description:
-        "Mastering Data Structures for Better Code Performance",
+      description: "Mastering Data Structures for Better Code Performance",
       color: "bg-primary",
       technologies: [
         "/icons/array.png",
@@ -183,11 +183,9 @@ export function SkillsPage() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-muted/30 pt-20">
+    <section className="py-20 bg-gradient-to-b from-background to-muted/30 pt-5 sm:pt-20">
       <div className="container px-4">
-        <motion.div
-          className="text-center mb-16"
-        >
+        <motion.div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">My Skills</h2>
           <div className="h-1 w-20 bg-primary mx-auto mb-6"></div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -203,7 +201,7 @@ export function SkillsPage() {
           animate={inView ? "visible" : "hidden"}
           className="grid grid-cols-1 sm:grid-cols-3 gap-6"
         >
-          {skills.map((skill, index) => ( 
+          {skills.map((skill, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
