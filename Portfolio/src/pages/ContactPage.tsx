@@ -186,7 +186,7 @@ export function ContactPage() {
                   },
                   {
                     href: "https://wa.me/6384091750",
-                    icon: "icons/whatsapp.png",
+                    icon: "icons/whatsapp-icon.png",
                   },
                   {
                     href: "https://www.instagram.com/jayasuriya.ganesan_/?hl=en",
@@ -207,58 +207,6 @@ export function ContactPage() {
                 ))}
               </div>
             </div>
-
-            {/* <div className="mt-12">
-              <h3 className="text-xl font-bold mb-4">Connect With Me</h3>
-              <div className="flex gap-4">
-                <motion.a
-                  href="https://www.linkedin.com/in/jayasuriya-g/"
-                  target="_blank"
-                  className="bg-primary p-3 rounded-full text-white shadow-lg"
-                  whileHover={{ y: -5, scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  <Linkedin className="h-5 w-5" />
-                </motion.a>
-                <motion.a
-                  href="https://github.com/Jayasuriya033"
-                  target="_blank"
-                  className="bg-primary p-3 rounded-full text-white shadow-lg"
-                  whileHover={{ y: -5, scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  <Github className="h-5 w-5" />
-                </motion.a>
-                <motion.a
-                  href="#"
-                  target="_blank"
-                  className="bg-primary p-3 rounded-full text-white shadow-lg"
-                  whileHover={{ y: -5, scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  <Twitter className="h-5 w-5" />
-                </motion.a>
-                <motion.a
-                  href="https://wa.me/6384091750"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-primary p-3 rounded-full text-white shadow-lg"
-                  whileHover={{ y: -5, scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  <MessageCircle className="h-5 w-5" />
-                </motion.a>
-                <motion.a
-                  href="https://www.instagram.com/jayasuriya.ganesan_/?hl=en"
-                  target="_blank"
-                  className="bg-primary p-3 rounded-full text-white shadow-lg"
-                  whileHover={{ y: -5, scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  <Instagram className="h-5 w-5" />
-                </motion.a>
-              </div>
-            </div> */}
           </motion.div>
 
           <motion.div
