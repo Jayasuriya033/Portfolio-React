@@ -74,9 +74,6 @@ export function ContactPage() {
     <section className="py-20 bg-gradient-to-b from-background to-muted/30 pt-20">
       <div className="container px-4">
         <motion.div
-          // initial={{ opacity: 0, y: 20 }}
-          // animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          // transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
@@ -90,7 +87,6 @@ export function ContactPage() {
           ref={ref}
           className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-6"
         >
-          {/* <div ref={ref} className="grid md:grid-cols-2 gap-12"> */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}

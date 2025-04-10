@@ -62,9 +62,6 @@ export function ProjectsPage() {
     <section className="py-20 bg-gradient-to-b from-muted/30 to-background pt-20">
       <div className="container px-4">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">My Projects</h2>
@@ -78,8 +75,8 @@ export function ProjectsPage() {
           {categories.map((category, index) => (
             <motion.div
               key={category.id}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
             >
               <Button
@@ -99,14 +96,14 @@ export function ProjectsPage() {
 
         <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="wait">
-            {filteredProjects.map((project) => (
+            {filteredProjects.map((project, id) => (
               <motion.div
                 key={project.id}
                 layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.5 }}
+                initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.3, delay: id * 0.1 }}
                 className="bg-card rounded-lg overflow-hidden border border-border hover:border-primary/50 transition-all duration-500 group relative"
                 whileHover={{
                   y: -10,

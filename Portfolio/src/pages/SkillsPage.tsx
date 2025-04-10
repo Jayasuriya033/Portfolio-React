@@ -2,13 +2,6 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-// import { Badge } from "../components/ui/Badge";
-// import { Code2, Database, Laptop, Zap } from "lucide-react";
-// import { FaReact, FaAngular } from "react-icons/fa";
-// import { IoLogoJavascript } from "react-icons/io";
-// import { TbBrandTypescript } from "react-icons/tb";
-// import { RiTailwindCssFill } from "react-icons/ri";
-// import reactIcon from "../../public/icons/react.svg"
 
 export function SkillsPage() {
   const [ref, inView] = useInView({
@@ -193,9 +186,6 @@ export function SkillsPage() {
     <section className="py-20 bg-gradient-to-b from-background to-muted/30 pt-20">
       <div className="container px-4">
         <motion.div
-          // initial={{ opacity: 0, y: 20 }}
-          // animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          // transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">My Skills</h2>
@@ -211,7 +201,7 @@ export function SkillsPage() {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-6"
         >
           {skills.map((skill, index) => ( 
             <motion.div

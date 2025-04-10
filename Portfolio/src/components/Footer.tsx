@@ -18,12 +18,12 @@ export function Footer() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="text-2xl font-bold text-primary">Jayasuriya</span>
+            <span className="text-2xl font-bold text-gray-400 ">Jayasuriya</span>
           </motion.div>
 
           <motion.button
             onClick={scrollToTop}
-            className="p-2 bg-primary text-white rounded-full shadow-lg hover:bg-primary/90 transition-colors duration-300"
+            className="p-2 bg-gray-500 text-white rounded-full shadow-lg hover:bg-gray-400 /90 transition-colors duration-300"
             whileHover={{ y: -5 }}
             whileTap={{ scale: 0.95 }}
           >

@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "../components/ui/Button";
-// import { Badge } from "../components/ui/Badge"
 import { useNavigate } from "react-router-dom";
 
 export function HomePage() {
@@ -99,7 +98,8 @@ const Portfolio = () => {
             >
               <Button
                 size="lg"
-                className=" bg-primary text-primary-foreground hover:bg-primary/90 group text-base sm:text-lg px-4 py-2 sm:px-6 sm:py-3 text-center w-full sm:w-auto  F"
+                className="bg-primary text-white border border-transparent hover:bg-transparent hover:text-primary hover:border-primary transition-all duration-200 group text-base sm:text-lg px-4 py-2 sm:px-6 sm:py-3 text-center w-full sm:w-auto"
+
                 onClick={() => navigate("/projects")}
               >
                 View My Work

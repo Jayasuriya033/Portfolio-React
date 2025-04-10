@@ -1,66 +1,67 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Link, useLocation } from "react-router-dom"
-import { Menu, X, ChevronUp } from "lucide-react"
-import { Button } from "./ui/Button"
-import { ThemeToggle } from "./ThemeToggle"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, ChevronUp } from "lucide-react";
+import { Button } from "./ui/Button";
+import { ThemeToggle } from "./ThemeToggle";
 
- 
 const navItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Skills", href: "/skills" },
   { name: "Projects", href: "/projects" },
   { name: "Contact", href: "/contact" },
-]
+];
 
 export function Navbar() {
-  const location = useLocation()
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [showScrollTop, setShowScrollTop] = useState(false)
+  const location = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        setIsScrolled(true)
+        setIsScrolled(true);
       } else {
-        setIsScrolled(false)
+        setIsScrolled(false);
       }
       if (window.scrollY > 300) {
-        setShowScrollTop(true)
+        setShowScrollTop(true);
       } else {
-        setShowScrollTop(false)
+        setShowScrollTop(false);
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleDownloadResume = () => {
-    const link = document.createElement("a")
-    link.href = "/resume.pdf"
-    link.download = "Jayasuriya-Resume.pdf"
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
-  }
+    const link = document.createElement("a");
+    link.href = "/resume.pdf";
+    link.download = "Jayasuriya-Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
-    })
-  }
+    });
+  };
 
   return (
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? "bg-background/80 backdrop-blur-md shadow-md py-3" : "bg-transparent py-5"
+          isScrolled
+            ? "bg-background/80 backdrop-blur-md shadow-md py-3"
+            : "bg-transparent py-5"
         }`}
       >
         <div className="container px-4 mx-auto flex items-center justify-between">
@@ -87,13 +88,17 @@ export function Navbar() {
                 <Link
                   to={item.href}
                   className={`group relative px-4 py-2 transition-colors duration-300 ${
-                    location.pathname === item.href ? "text-primary" : "text-foreground/80 hover:text-primary"
+                    location.pathname === item.href
+                      ? "text-primary"
+                      : "text-foreground/80 hover:text-primary"
                   }`}
                 >
                   {item.name}
                   <span
                     className={`absolute bottom-0 left-0 w-full h-0.5 bg-primary transition-transform duration-300 origin-left ${
-                      location.pathname === item.href ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                      location.pathname === item.href
+                        ? "scale-x-100"
+                        : "scale-x-0 group-hover:scale-x-100"
                     }`}
                   />
                 </Link>
@@ -109,9 +114,9 @@ export function Navbar() {
               <Button
                 onClick={handleDownloadResume}
                 size="sm"
-                className="ml-4 bg-primary hover:bg-primary/90 text-white"
+                className="w-full bg-transparent text-primary border border-primary hover:bg-primary hover:text-white"
               >
-                Resume
+                Download CV
               </Button>
             </motion.div>
           </nav>
@@ -156,7 +161,9 @@ export function Navbar() {
                       <Link
                         to={item.href}
                         className={`block py-2 transition-colors ${
-                          location.pathname === item.href ? "text-primary" : "text-foreground/80 hover:text-primary"
+                          location.pathname === item.href
+                            ? "text-primary"
+                            : "text-foreground/80 hover:text-primary"
                         }`}
                         onClick={() => setMobileMenuOpen(false)}
                       >
@@ -172,9 +179,9 @@ export function Navbar() {
                     <Button
                       onClick={handleDownloadResume}
                       size="sm"
-                      className="w-full bg-primary hover:bg-primary/90 text-white"
-                    >
-                      Resume
+                      className="w-full bg-transparent text-primary border border-primary hover:bg-primary hover:text-white"
+                      >
+                      Download CV
                     </Button>
                   </motion.div>
                 </nav>
@@ -184,7 +191,6 @@ export function Navbar() {
         </AnimatePresence>
       </header>
 
-      {/* Scroll to top button */}
       <AnimatePresence>
         {showScrollTop && (
           <motion.button
@@ -193,7 +199,7 @@ export function Navbar() {
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.3 }}
             onClick={scrollToTop}
-            className="fixed bottom-4 right-4 z-50 p-2 bg-primary text-white rounded-full shadow-lg hover:bg-primary/90 transition-colors duration-300"
+            className="fixed bottom-4 right-4 z-50 bg-gray-500 text-white rounded-full shadow-lg hover:bg-gray-400/90 transition-colors duration-300"
             aria-label="Scroll to top"
           >
             <ChevronUp className="h-6 w-6" />
@@ -201,6 +207,5 @@ export function Navbar() {
         )}
       </AnimatePresence>
     </>
-  )
+  );
 }
-
