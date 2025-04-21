@@ -20,7 +20,7 @@ export function AboutPage() {
 
   return (
     <section className="py-20 bg-gradient-to-b from-muted/30 to-background pt-20 sm:pt-50">
-    {/* <section className="py-10 sm:py-16 lg:py-20 bg-gradient-to-b from-background to-muted/30 pt-5 sm:pt-20"> */}
+      {/* <section className="py-10 sm:py-16 lg:py-20 bg-gradient-to-b from-background to-muted/30 pt-5 sm:pt-20"> */}
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -98,7 +98,7 @@ export function AboutPage() {
               ))}
             </div>
 
-            <div className="overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-200 text-sm pr-2 sm:text-lg h-[100px] w-[300px] sm:h-[15%] sm:w-[80%]">            
+            <div className="overflow-y-auto text-sm pr-2 sm:text-base h-[100px] w-[300px] sm:h-[22%] sm:w-[80%]">
               {selectedTab === "Experience" && (
                 <ul className="list-disc pl-5 space-y-4 text-muted-foreground">
                   <li>
