@@ -60,3 +60,6 @@ The build files will be in the `dist` directory.
 - React Router
 - Vite
 
+## Deployed URL
+'https://jayasuriya-portfolio.onrender.com/'
+
