@@ -6,6 +6,8 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronUp } from "lucide-react";
 import { Button } from "./ui/Button";
 import { ThemeToggle } from "./ThemeToggle";
+import { GiBrightExplosion } from "react-icons/gi";
+
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -72,7 +74,10 @@ export function Navbar() {
               transition={{ duration: 0.5 }}
               className="flex items-center"
             >
-              <span className="text-primary">Jayasuriya</span>
+              <span className="text-primary font-mono flex items-center gap-2">
+                <GiBrightExplosion />
+                Jayasuriya
+              </span>
             </motion.div>
           </Link>
 
@@ -180,7 +185,7 @@ export function Navbar() {
                       onClick={handleDownloadResume}
                       size="sm"
                       className="w-full bg-transparent text-primary border border-primary hover:bg-primary hover:text-white"
-                      >
+                    >
                       Download CV
                     </Button>
                   </motion.div>

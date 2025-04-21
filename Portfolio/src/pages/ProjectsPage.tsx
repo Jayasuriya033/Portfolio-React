@@ -10,22 +10,22 @@ import { Github, ExternalLink, ArrowRight } from "lucide-react"
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
+    title: "QR Location",
     description:
-      "A full-stack e-commerce platform with product management, cart functionality, and payment processing.",
-    image: "/placeholder.svg?height=400&width=600",
+      "Generate and download a QR code to track the exact location.",
+    image: "/assets/qrImage.png",
     technologies: ["React", "TypeScript", "Node.js", "MySQL", "Prisma", "Tailwind CSS"],
-    github: "#",
-    demo: "#",
+    github: "https://github.com/Jayasuriya033/QrCode-Location",
+    demo: "https://qrcode-location-frontend.onrender.com/",
     category: "fullstack",
   },
   {
     id: 2,
-    title: "Task Management App",
-    description: "A collaborative task management application with real-time updates and team workspaces.",
-    image: "/placeholder.svg?height=400&width=600",
-    technologies: ["React", "TypeScript", "Express", "MySQL", "Prisma", "Tailwind CSS"],
-    github: "#",
+    title: "Book Store Management",
+    description: "Managing the books for students of every grade level.",
+    image: "/assets/bookStore.avif",
+    technologies: ["React", "Javascript", "Node", "Express", "MySQL", "Prisma"],
+    github: "https://github.com/Jayasuriya033/Book-store/tree/main/Library-Management",
     demo: "#",
     category: "fullstack",
   },
@@ -33,10 +33,10 @@ const projects = [
     id: 3,
     title: "Portfolio Website",
     description: "A responsive portfolio website showcasing projects and skills with animations and dark mode.",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/assets/portfolio.jpg",
     technologies: ["React", "TypeScript", "Tailwind CSS"],
-    github: "#",
-    demo: "#",
+    github: "https://github.com/Jayasuriya033/Portfolio-React",
+    demo: "https://jayasuriya-portfolio.onrender.com/",
     category: "frontend",
   },
 ]
@@ -123,9 +123,9 @@ export function ProjectsPage() {
                     {project.title}
                   </h3>
                   <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap justify-center gap-2 mb-4">
                     {project.technologies.map((tech, index) => (
-                      <Badge key={index} variant="outline" className="text-xs">
+                      <Badge key={index} variant="outline" className="text-xs w-[100px]">
                         {tech}
                       </Badge>
                     ))}

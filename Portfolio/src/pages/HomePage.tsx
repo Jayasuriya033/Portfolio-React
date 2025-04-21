@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "../components/ui/Button";
 import { useNavigate } from "react-router-dom";
+import { GiBrightExplosion } from "react-icons/gi";
+
 
 export function HomePage() {
   const navigate = useNavigate();
@@ -118,19 +120,19 @@ const Portfolio = () => {
 
           <div className="relative">
             <motion.div
-              className="relative bg-black/90 rounded-xl p-6 shadow-xl border border-primary/20 font-mono text-sm text-green-400 overflow-hidden h-[350px] overflow-y-auto"
+              className="relative bg-black/90 rounded-xl p-6 shadow-xl border border-primary/20 font-mono text-xs sm:text-sm text-green-400 overflow-hidden h-[300px] sm:h-[350px]  overflow-y-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <div className="flex items-center gap-1.5 mb-4">
+              <div className="flex items-center gap-2 mb-4">
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
                 <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500"></div>
                 <div className="ml-2 text-xs text-gray-400">portfolio.tsx</div>
               </div>
 
-              <div className="relative">
+              <div className="relative sm:pl-16 overflow-x-auto sm:overflow-x-hidden">
                 {codeSnippet.map((char, index) => (
                   <motion.span
                     key={index}

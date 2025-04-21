@@ -19,7 +19,8 @@ export function AboutPage() {
   const tabs = ["Experience", "Education", "Certification"];
 
   return (
-    <section className="py-10 sm:py-16 lg:py-20 bg-gradient-to-b from-background to-muted/30 pt-5 sm:pt-20">
+    <section className="py-20 bg-gradient-to-b from-muted/30 to-background pt-20 sm:pt-50">
+    {/* <section className="py-10 sm:py-16 lg:py-20 bg-gradient-to-b from-background to-muted/30 pt-5 sm:pt-20"> */}
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -54,7 +55,7 @@ export function AboutPage() {
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div className="mb-6">
+            <div className="mb-6  sm:w-[650px]">
               <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 text-primary">
                 Who Am I?
               </h1>
@@ -97,7 +98,7 @@ export function AboutPage() {
               ))}
             </div>
 
-            <div className="text-sm sm:text-base">
+            <div className="overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-200 text-sm pr-2 sm:text-lg h-[100px] w-[300px] sm:h-[15%] sm:w-[80%]">            
               {selectedTab === "Experience" && (
                 <ul className="list-disc pl-5 space-y-4 text-muted-foreground">
                   <li>
