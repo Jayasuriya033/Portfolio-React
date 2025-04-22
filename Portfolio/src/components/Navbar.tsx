@@ -76,7 +76,7 @@ export function Navbar() {
             >
               <span className="text-primary font-mono flex items-center gap-2">
                 <GiBrightExplosion />
-                Jayasuriya
+                <span className="text-xl sm:text-3xl">Jayasuriya</span>
               </span>
             </motion.div>
           </Link>

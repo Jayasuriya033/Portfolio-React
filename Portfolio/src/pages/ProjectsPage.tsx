@@ -39,6 +39,26 @@ const projects = [
     demo: "https://jayasuriya-portfolio.onrender.com/",
     category: "frontend",
   },
+  {
+    id: 4,
+    title: "Real-time Chat App",
+    description: "Built with React and Socket.IO, this app lets users log in and exchange messages instantly, with support for online status and responsive design.",
+    image: "/assets/chat-app.jpg",
+    technologies: ["React", "Refine", "Web Socket", "Typescript","Node", "express", "Postgresql", "Prisma", "Tailwind CSS"],
+    github: "https://github.com/Jayasuriya033/Web-Socket-Project",
+    demo: "https://web-socket-project.onrender.com",
+    category: "fullstack",
+  },
+  {
+    id: 5,
+    title: "Number Guess Game",
+    description: "A simple guessing game where players try to find the correct number within limited chances. Built with React.",
+    image: "/assets/number-guess.png",
+    technologies: ["React", "Javascript"],
+    github: "https://github.com/Jayasuriya033/Number-Guess",
+    demo: "https://number-guess-game-atbh.onrender.com",
+    category: "frontend",
+  },
 ]
 
 const categories = [

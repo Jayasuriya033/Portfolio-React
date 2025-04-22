@@ -6,7 +6,6 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "../components/ui/Button";
 import { useNavigate } from "react-router-dom";
 
-
 export function HomePage() {
   const navigate = useNavigate();
   const [scrollY, setScrollY] = useState(0);
@@ -76,7 +75,10 @@ const Portfolio = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                I build exceptional digital experiences
+                <h2 className="text-xl sm:text-2xl text-foreground mb-6 max-w-2xl">
+                  I craft clean, modern, and responsive web applications that
+                  deliver exceptional user experiences.
+                </h2>
               </motion.h2>
 
               <motion.p
@@ -85,9 +87,15 @@ const Portfolio = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                Specialized in creating modern, responsive web applications with
-                React, TypeScript, and Node.js. Focused on clean code,
-                performance, and user experience.
+                <p className="text-lg sm:text-xl text-foreground/80 max-w-3xl">
+                  I'm a passionate Full-Stack Developer specializing in{" "}
+                  <span className="text-primary font-semibold">React</span>,{" "}
+                  <span className="text-primary font-semibold">TypeScript</span>
+                  , and{" "}
+                  <span className="text-primary font-semibold">Node.js</span>. I
+                  focus on writing clean, efficient code while building
+                  beautiful, performant interfaces.
+                </p>
               </motion.p>
             </div>
 
@@ -99,8 +107,7 @@ const Portfolio = () => {
             >
               <Button
                 size="lg"
-                className="bg-primary text-white border border-transparent hover:bg-transparent hover:text-primary hover:border-primary transition-all duration-200 group text-base sm:text-lg px-4 py-2 sm:px-6 sm:py-3 text-center w-full sm:w-auto"
-
+                className="bg-transparent text-primary border border-primary hover:bg-primary hover:text-white"
                 onClick={() => navigate("/projects")}
               >
                 View My Work
@@ -109,7 +116,7 @@ const Portfolio = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-primary/50 text-foreground hover:bg-primary/5"
+                className="bg-transparent text-primary border border-primary hover:bg-primary hover:text-white"
                 onClick={() => navigate("/contact")}
               >
                 Contact Me
@@ -145,7 +152,7 @@ const Portfolio = () => {
                 <motion.span
                   animate={{ opacity: [1, 0, 1] }}
                   transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY }}
-                  className="inline-block w-2 h-4 bg-green-400 ml-1"
+                  className="inline-block w-2 h-4 bg-               -400 ml-1"
                 />
               </div>
               <div className="absolute top-1/2 right-0 w-20 h-20 bg-primary/20 rounded-full blur-xl"></div>

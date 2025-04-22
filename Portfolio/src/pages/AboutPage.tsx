@@ -20,7 +20,6 @@ export function AboutPage() {
 
   return (
     <section className="py-20 bg-gradient-to-b from-muted/30 to-background pt-20 sm:pt-50">
-      {/* <section className="py-10 sm:py-16 lg:py-20 bg-gradient-to-b from-background to-muted/30 pt-5 sm:pt-20"> */}
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -35,14 +34,14 @@ export function AboutPage() {
           </h2>
           <div className="h-1 w-20 bg-primary mx-auto"></div>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[40%_60%] gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[40%_60%] gap-8 2xl:gap-10 lg:gap-5">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex justify-center items-center"
           >
-            <div className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
+            <div className="relative w-60 h-60 sm:w-[70%] sm:h-[90%] md:w-[100%] md:h-[70%] md:-mt-64 lg:w-[80%] lg:h-[80%] lg:-mt-32">
               <img
                 src="/assets/profile.webp"
                 alt="Jayasuriya"
@@ -55,7 +54,7 @@ export function AboutPage() {
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div className="mb-6  sm:w-[650px]">
+            <div className="mb-6  sm:w-[90%] md:w-[300px] lg:w-[500px] xl:w-[700px] 2xl:w-[900px] sm:ml-8">
               <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 text-primary">
                 Who Am I?
               </h1>
@@ -82,7 +81,7 @@ export function AboutPage() {
                 </strong>
               </p>
             </div>
-            <div className="flex flex-wrap items-center gap-[4px] text-[13px] sm:gap-3 sm:text-base mb-4">
+            <div className="flex flex-wrap items-center gap-[4px] text-[13px] sm:gap-3 sm:ml-8 sm:text-base mb-4">
               {tabs.map((tab) => (
                 <button
                   key={tab}
@@ -98,7 +97,7 @@ export function AboutPage() {
               ))}
             </div>
 
-            <div className="overflow-y-auto text-sm pr-2 sm:text-base h-[100px] w-[300px] sm:h-[22%] sm:w-[80%]">
+            <div className="overflow-y-auto text-sm pr-2 sm:text-base h-[100px] w-[300px] sm:ml-8 sm:h-[22%] sm:w-[80%]">
               {selectedTab === "Experience" && (
                 <ul className="list-disc pl-5 space-y-4 text-muted-foreground">
                   <li>
