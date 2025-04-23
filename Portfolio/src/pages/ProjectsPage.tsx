@@ -59,6 +59,16 @@ const projects = [
     demo: "https://number-guess-game-atbh.onrender.com",
     category: "frontend",
   },
+  {
+    id: 6,
+    title: "Error Handling",
+    description: "Implements basic error handling to ensure the app remains stable and user-friendly. Invalid inputs are managed with clear messages, preventing crashes and guiding users to correct their actions.",
+    image: "/assets/error-handling.jpg",
+    technologies: ["Javascript", "Node", "Express", "Prisma", "Middlewares"],
+    github: "https://github.com/Jayasuriya033/Error-Handling",
+    demo: "#",
+    category: "backend",
+  },
 ]
 
 const categories = [
@@ -105,7 +115,7 @@ export function ProjectsPage() {
                 className={`mb-2 ${
                   activeCategory === category.id
                     ? "bg-primary hover:bg-primary/90"
-                    : "hover:border-primary/70 hover:text-primary"
+                    : "bg-transparent text-primary border border-primary hover:bg-primary hover:text-white"
                 }`}
               >
                 {category.label}
@@ -124,7 +134,7 @@ export function ProjectsPage() {
                 initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.3, delay: id * 0.1 }}
-                className="bg-card rounded-lg overflow-hidden border border-border hover:border-primary/50 transition-all duration-500 group relative"
+                className="bg-card rounded-lg overflow-hidden border border-border hover:border-primary/50 transition-all duration-500 group relative flex flex-col justify-around"
                 whileHover={{
                   y: -10,
                   boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
@@ -145,7 +155,7 @@ export function ProjectsPage() {
                   <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
                   <div className="flex flex-wrap justify-center gap-2 mb-4">
                     {project.technologies.map((tech, index) => (
-                      <Badge key={index} variant="outline" className="text-xs w-[100px]">
+                      <Badge key={index} variant="outline" className="text-base w-auto">
                         {tech}
                       </Badge>
                     ))}

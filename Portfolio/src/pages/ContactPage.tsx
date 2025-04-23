@@ -8,7 +8,7 @@ import { Input } from "../components/ui/Input";
 import { Textarea } from "../components/ui/Textarea";
 import emailjs from "@emailjs/browser";
 import { Send } from "lucide-react";
-
+import { IoCheckmarkSharp, IoCloseSharp } from "react-icons/io5";
 export function ContactPage() {
   const [ref, inView] = useInView({
     triggerOnce: false,
@@ -21,7 +21,10 @@ export function ContactPage() {
     subject: "",
     message: "",
   });
-
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
+  const [_toastIconType, _setToastIconType] = useState("");
+  const [toastType, setToastType] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
@@ -51,12 +54,19 @@ export function ContactPage() {
       );
 
       if (response.status === 200) {
-        alert("Email sent successfully!");
+        setToastMessage("Email sent successfully");
+        setToastType("success");
+        setShowToast(true);
+        setTimeout(() => setShowToast(false), 3000);
+
         setFormState({ name: "", email: "", subject: "", message: "" });
       }
     } catch (error) {
       console.error("Email sending failed:", error);
-      alert("Failed to send email. Please try again.");
+      setToastMessage("Failed to send email. Please try again!");
+      setToastType("error");
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 3000);
     }
     setTimeout(() => {
       console.log("Form submitted:", formState);
@@ -280,11 +290,11 @@ export function ContactPage() {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full group bg-primary hover:bg-primary/90"
+                className="w-full group bg-transparent text-primary border border-primary hover:bg-primary hover:text-white"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
-                  <span className="flex items-center gap-2">
+                  <span className="flex items-center gap-2 ">
                     <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
                       <circle
                         className="opacity-25"
@@ -309,6 +319,20 @@ export function ContactPage() {
                   </span>
                 )}
               </Button>
+
+              {showToast && (
+                <div
+                  className={`fixed top-10 right-5 px-4 py-2 rounded shadow-md flex items-center gap-2 
+      ${toastType === "success" ? "bg-green-600" : "bg-red-600"} text-white`}
+                >
+                  {toastType === "success" ? (
+                    <IoCheckmarkSharp />
+                  ) : (
+                    <IoCloseSharp />
+                  )}
+                  <span>{toastMessage}</span>
+                </div>
+              )}
             </form>
           </motion.div>
         </div>
