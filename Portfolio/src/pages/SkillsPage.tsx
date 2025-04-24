@@ -1,4 +1,4 @@
-"use client";
+
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -183,7 +183,7 @@ export function SkillsPage() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-muted/30 to-background pt-20 sm:pt-50">
+    <section id="skill" className="py-20 bg-gradient-to-b from-muted/30 to-background pt-20 sm:pt-50">
       <div className="container px-4">
         <motion.div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">My Skills</h2>

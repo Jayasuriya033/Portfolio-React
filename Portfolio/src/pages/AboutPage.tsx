@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
@@ -19,7 +17,7 @@ export function AboutPage() {
   const tabs = ["Experience", "Education", "Certification"];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-muted/30 to-background pt-20 sm:pt-50">
+    <section id="about" className="py-20 bg-gradient-to-b from-muted/30 to-background pt-20 sm:pt-50">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -188,6 +186,21 @@ export function AboutPage() {
                     </p>
                     <p>
                       Date: <strong>March 24, 2023</strong>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Certification:{" "}
+                      <strong>Java</strong>
+                    </p>
+                    <p>
+                      Certification ID: <strong>CT-ILKXDCLP</strong>
+                    </p>
+                    <p>
+                      Issued by: <strong>Solo Learn</strong>
+                    </p>
+                    <p>
+                      Date: <strong>April 14, 2022</strong>
                     </p>
                   </li>
                 </ul>

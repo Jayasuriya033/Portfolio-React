@@ -1,20 +1,20 @@
-"use client";
+
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Menu, X, ChevronUp } from "lucide-react";
 import { Button } from "./ui/Button";
 import { ThemeToggle } from "./ThemeToggle";
 import { GiBrightExplosion } from "react-icons/gi";
-
+import { Link } from "react-scroll";
 
 const navItems = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Skills", href: "/skills" },
-  { name: "Projects", href: "/projects" },
-  { name: "Contact", href: "/contact" },
+  { name: "Home", href: "home" },
+  { name: "About", href: "about" },
+  { name: "Skills", href: "skill" },
+  { name: "Projects", href: "project" },
+  { name: "Contact", href: "contact" },
 ];
 
 export function Navbar() {
@@ -67,7 +67,14 @@ export function Navbar() {
         }`}
       >
         <div className="container px-4 mx-auto flex items-center justify-between">
-          <Link to="/" className="text-2xl font-bold text-primary">
+          <Link
+            to="home"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className="text-2xl font-bold text-primary"
+          >
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -92,6 +99,10 @@ export function Navbar() {
               >
                 <Link
                   to={item.href}
+                  spy={true}
+                  smooth={true}
+                  offset={-5}
+                  duration={800}
                   className={`group relative px-4 py-2 transition-colors duration-300 ${
                     location.pathname === item.href
                       ? "text-primary"

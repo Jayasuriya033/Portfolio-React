@@ -89,7 +89,7 @@ export function ProjectsPage() {
     activeCategory === "all" ? projects : projects.filter((project) => project.category === activeCategory)
 
   return (
-    <section className="py-20 bg-gradient-to-b from-muted/30 to-background pt-20">
+    <section id="project" className="py-20 bg-gradient-to-b from-muted/30 to-background pt-20">
       <div className="container px-4">
         <motion.div
           className="text-center mb-12"

@@ -1,4 +1,4 @@
-"use client";
+
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -37,7 +37,7 @@ const Portfolio = () => {
 )};`.split("");
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-background pt-2">
+    <section id="home" className="relative min-h-screen overflow-hidden bg-background pt-2">
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] pointer-events-none" />
       <div
         className="absolute -top-40 -right-40 w-96 h-96 bg-primary/30 rounded-full blur-3xl opacity-70"
