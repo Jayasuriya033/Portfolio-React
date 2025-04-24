@@ -1,13 +1,9 @@
-
-
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { Button } from "../components/ui/Button";
-import { useNavigate } from "react-router-dom";
+import {Link} from "react-scroll"
 
 export function HomePage() {
-  const navigate = useNavigate();
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -100,33 +96,37 @@ const Portfolio = () => {
             </div>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-4 hover:"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
-              <Button
-                size="lg"
-                className="bg-transparent text-primary border border-primary hover:bg-primary hover:text-white"
-                onClick={() => navigate("/projects")}
-              >
+              <Link
+                to="contact"
+                spy={true}
+                smooth={true}
+                offset={-5}
+                duration={800}
+                className="bg-transparent w-auto h-auto py-1 px-4 rounded text-primary border border-primary flex flex-row justify-center hover:bg-primary hover:text-white lg:hover:w-60"              >
                 View My Work
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="bg-transparent text-primary border border-primary hover:bg-primary hover:text-white"
-                onClick={() => navigate("/contact")}
+                <ArrowRight className="m-2 mt-1.5 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+               to="contact"
+               spy={true}
+               smooth={true}
+               offset={-5}
+               duration={800}
+                className="bg-transparent text-center w-auto h-auto py-1 px-4 rounded text-primary border border-primary hover:bg-primary hover:text-white lg:hover:w-40"
               >
                 Contact Me
-              </Button>
+              </Link>
             </motion.div>
           </div>
 
           <div className="relative">
             <motion.div
-              className="relative bg-black/90 rounded-xl p-6 shadow-xl border border-primary/20 font-mono text-xs sm:text-sm text-green-400 overflow-hidden h-[300px] sm:h-[350px]  overflow-y-auto"
+              className="relative bg-black/90 rounded-xl p-6 shadow-xl border border-primary/20 font-mono text-xs sm:text-sm text-green-400 overflow-hidden h-[300px] sm:h-[350px] md:h-[400px] xl:h-[350px] overflow-y-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -170,15 +170,23 @@ const Portfolio = () => {
             Scroll to explore
           </span>
           <motion.div
-            className="w-6 h-10 border-2 border-muted-foreground rounded-full flex justify-center"
+            className="w-6 h-10 border-2 border-muted-foreground rounded-full flex justify-center cursor-pointer"
             animate={{ y: [0, 5, 0] }}
             transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
           >
+            <Link
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={-5}
+              duration={800} 
+            >
             <motion.div
               className="w-1.5 h-1.5 bg-primary rounded-full mt-2"
               animate={{ y: [0, 4, 0] }}
               transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
             />
+            </Link>
           </motion.div>
         </motion.div>
       </div>

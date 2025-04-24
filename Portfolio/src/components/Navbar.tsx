@@ -130,7 +130,7 @@ export function Navbar() {
               <Button
                 onClick={handleDownloadResume}
                 size="sm"
-                className="w-full bg-transparent text-primary border border-primary hover:bg-primary hover:text-white"
+                className="w-full text-xs lg:text-base bg-transparent text-primary border border-primary hover:bg-primary hover:text-white"
               >
                 Download CV
               </Button>
@@ -175,7 +175,11 @@ export function Navbar() {
                       transition={{ duration: 0.3, delay: index * 0.1 }}
                     >
                       <Link
-                        to={item.href}
+                         to={item.href}
+                         spy={true}
+                         smooth={true}
+                         offset={-5}
+                         duration={800}
                         className={`block py-2 transition-colors ${
                           location.pathname === item.href
                             ? "text-primary"
