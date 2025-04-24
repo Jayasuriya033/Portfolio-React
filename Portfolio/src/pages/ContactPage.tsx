@@ -22,10 +22,30 @@ export function ContactPage() {
     message: "",
   });
   const [showToast, setShowToast] = useState(false);
+  const [showCopyToast, setShowCopyToast] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
   const [_toastIconType, _setToastIconType] = useState("");
   const [toastType, setToastType] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [copyMessage, setCopyMessage] = useState("");
+  const [_field, setField] = useState("");
+
+  const handleCopy = async (name: string, text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setField(name);
+      setShowCopyToast(true);
+      setCopyMessage(`${name} Copied!`);
+      // alert(`${name} Copied!`)
+      setTimeout(() => {
+        setField("");
+        setShowCopyToast(false);
+      }, 3000);
+    } catch (error) {
+      console.log("Copy Error ", error);
+      alert("Nothing Copied");
+    }
+  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -81,7 +101,10 @@ export function ContactPage() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-muted/30 to-background pt-20 sm:pt-50">
+    <section
+      id="contact"
+      className="py-20 bg-gradient-to-b from-muted/30 to-background pt-20 sm:pt-50"
+    >
       <div className="container px-4">
         <motion.div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
@@ -101,9 +124,16 @@ export function ContactPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-card p-8 rounded-lg border border-border shadow-lg"
           >
-            <h3 className="text-2xl font-bold mb-6 text-primary">
-              Contact Information
-            </h3>
+            <div className="flex justify-between">
+              <h3 className="text-2xl font-bold mb-6 text-primary">
+                Contact Information{" "}
+              </h3>
+              {showCopyToast && (
+                <p className="px-2 rounded text-primary">
+                  {copyMessage}
+                </p>
+              )}
+            </div>
 
             <div className="space-y-6">
               <motion.div
@@ -111,13 +141,20 @@ export function ContactPage() {
                 whileHover={{ x: 5 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <div className="border border-graw-900 p-3 rounded-full text-white">
-                  <img
-                    src={"icons/email.png"}
-                    className="h-4 w-5 sm:h-6 sm:w-6"
-                    alt={`Email Icon`}
-                  />
+                <div className="flex flex-col">
+                  {" "}
+                  <div className="border border-graw-900 p-3 rounded-full text-white">
+                    <img
+                      src={"icons/email.png"}
+                      className="h-4 w-5 sm:h-6 sm:w-6 cursor-pointer"
+                      alt={`Email Icon`}
+                      onClick={() =>
+                        handleCopy("Email", "jayasuriyaganesan2019@gmail.com")
+                      }
+                    />
+                  </div>
                 </div>
+
                 <div>
                   <h4 className="text-muted-foreground break-all text-sm sm:text-base">
                     Email
@@ -133,12 +170,17 @@ export function ContactPage() {
                 whileHover={{ x: 5 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <div className="border border-graw-900 p-3 rounded-full text-white">
-                  <img
-                    src={"icons/phone.png"}
-                    className="h-4 w-5 sm:h-6 sm:w-6"
-                    alt={`Phone Icon`}
-                  />
+                <div className="flex flex-col">
+                  <div className="border border-graw-900 p-3 rounded-full text-white">
+                    <img
+                      src={"icons/phone.png"}
+                      className="h-4 w-5 sm:h-6 sm:w-6 cursor-pointer"
+                      alt={`Phone Icon`}
+                      onClick={() =>
+                        handleCopy("Mobile Number", "+91 6384091750")
+                      }
+                    />
+                  </div>
                 </div>
                 <div>
                   <h4 className="text-muted-foreground break-all text-sm sm:text-base">
@@ -155,13 +197,22 @@ export function ContactPage() {
                 whileHover={{ x: 5 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <div className="border border-graw-900 p-3 rounded-full text-white">
-                  <img
-                    src={"icons/location.svg"}
-                    className="h-4 w-5 sm:h-6 sm:w-6"
-                    alt={`Email Icon`}
-                  />
+                <div className="flex flex-col relative">
+                  <div className="border border-gray-900 p-3 rounded-full text-white">
+                    <img
+                      src={"icons/location.svg"}
+                      className="h-4 w-5 sm:h-6 sm:w-6 cursor-pointer"
+                      alt={`Location Icon`}
+                      onClick={() =>
+                        handleCopy(
+                          "Address",
+                          "Tiruchirapalli, Tamilnadu, India."
+                        )
+                      }
+                    />
+                  </div>
                 </div>
+
                 <div>
                   <h4 className="text-muted-foreground break-all text-sm sm:text-base">
                     Location
@@ -333,6 +384,11 @@ export function ContactPage() {
                   <span>{toastMessage}</span>
                 </div>
               )}
+              {/* {showCopyToast && (
+                <div className="fixed top-10 right-5 px-4 py-2 rounded shadow-md flex items-center gap-2 bg-gray-600 text-white">
+                  <span>{copyMessage}</span>
+                </div>
+              )} */}
             </form>
           </motion.div>
         </div>
