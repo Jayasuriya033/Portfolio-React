@@ -109,7 +109,8 @@ export function ContactPage() {
         <motion.div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
           <div className="h-1 w-20 bg-primary mx-auto mb-6"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto"
+          >
             Have an exciting project idea or considering working together? I’d
             love to chat!
           </p>
@@ -125,11 +126,11 @@ export function ContactPage() {
             className="bg-card p-8 rounded-lg border border-border shadow-lg"
           >
             <div className="flex justify-between">
-              <h3 className="text-2xl font-bold mb-6 text-primary">
+              <h3 className=" text-lg md:text-2xl font-bold mb-6 text-primary">
                 Contact Information{" "}
               </h3>
               {showCopyToast && (
-                <p className="px-2 rounded text-primary">
+                <p className="px-2 rounded md:text-xl text-primary">
                   {copyMessage}
                 </p>
               )}
@@ -224,7 +225,7 @@ export function ContactPage() {
               </motion.div>
             </div>
             <div className="mt-12">
-              <h3 className="text-xl font-bold mb-4">Connect With Me</h3>
+              <h3 className="text-xl font-bold mb-4 text-primary">Connect With Me</h3>
               <div className="flex flex-wrap justify-around sm:justify-start gap-4 max-w-full">
                 {[
                   {

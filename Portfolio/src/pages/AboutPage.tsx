@@ -17,7 +17,7 @@ export function AboutPage() {
   const tabs = ["Experience", "Education", "Certification"];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-muted/30 to-background pt-20 sm:pt-50">
+    <section id="about" className="py-10 bg-gradient-to-b from-muted/30 to-background pt-20 sm:pt-50">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -39,7 +39,7 @@ export function AboutPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex justify-center items-center"
           >
-            <div className="relative w-60 h-60 sm:w-[70%] sm:h-[90%] md:w-[100%] md:h-[70%] md:-mt-64 lg:w-[80%] lg:h-[80%] lg:-mt-32">
+            <div className="relative w-60 h-60 sm:w-[80%] sm:h-[90%] md:w-[100%] md:h-[70%] md:-mt-64 lg:w-[100%] lg:h-[80%] lg:-mt-24 xl:w-[90%] xl:h-[95%] xl:-mt-10">
               <img
                 src="/assets/profile.webp"
                 alt="Jayasuriya"
@@ -95,7 +95,7 @@ export function AboutPage() {
               ))}
             </div>
 
-            <div className="overflow-y-auto text-sm pr-2 sm:text-base h-[100px] w-[300px] sm:ml-8 sm:h-[22%] sm:w-[80%]">
+            <div className="overflow-y-auto text-sm pr-2 sm:text-base h-[100px] w-[95%] sm:ml-8 sm:h-[20%] sm:w-[80%]  lg:h-[30%] lg:w-[80%] xl:h-[40%] xl:w-[80%]">
               {selectedTab === "Experience" && (
                 <ul className="list-disc pl-5 space-y-4 text-muted-foreground">
                   <li>
