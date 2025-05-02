@@ -39,7 +39,7 @@ export function AboutPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex justify-center items-center"
           >
-            <div className="relative w-60 h-60 sm:w-[80%] sm:h-[90%] md:w-[100%] md:h-[70%] md:-mt-64 lg:w-[100%] lg:h-[80%] lg:-mt-24 xl:w-[90%] xl:h-[95%] xl:-mt-10">
+            <div className="relative w-60 h-60 sm:w-[80%] sm:h-[90%] md:w-[100%] md:h-[70%] md:-mt-64 lg:w-[100%] lg:h-[80%] lg:-mt-24 xl:w-[90%] xl:h-[90%] xl:-mt-5">
               <img
                 src="/assets/profile.webp"
                 alt="Jayasuriya"
