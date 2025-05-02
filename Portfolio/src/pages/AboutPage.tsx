@@ -95,7 +95,7 @@ export function AboutPage() {
               ))}
             </div>
 
-            <div className="overflow-y-auto text-sm pr-2 sm:text-base h-[100px] w-[95%] sm:ml-8 sm:h-[20%] sm:w-[80%]  lg:h-[30%] lg:w-[80%] xl:h-[40%] xl:w-[80%]">
+            <div className="overflow-y-auto text-sm pr-2 sm:text-base h-[100px] w-[95%] sm:ml-8 sm:h-[20%] sm:w-[80%]  lg:h-[30%] lg:w-[80%] xl:h-[40%] xl:w-[90%]">
               {selectedTab === "Experience" && (
                 <ul className="list-disc pl-5 space-y-4 text-muted-foreground">
                   <li>

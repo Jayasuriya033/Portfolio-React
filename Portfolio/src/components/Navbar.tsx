@@ -219,10 +219,10 @@ export function Navbar() {
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.3 }}
             onClick={scrollToTop}
-            className="fixed bottom-4 right-4 z-50 bg-gray-500 text-white rounded-full shadow-lg hover:bg-gray-400/90 transition-colors duration-300"
+            className="fixed bottom-2 right-2 z-50 bg-gray-500 text-white rounded-full shadow-lg hover:bg-gray-400/90 transition-colors duration-300"
             aria-label="Scroll to top"
           >
-            <ChevronUp className="h-6 w-6" />
+            <ChevronUp className="h-6 w-6 md:h-8 md:w-8" />
           </motion.button>
         )}
       </AnimatePresence>
