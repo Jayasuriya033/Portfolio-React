@@ -23,7 +23,6 @@ export function AboutPage() {
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Auto-slide every 3 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) =>
@@ -31,7 +30,7 @@ export function AboutPage() {
       );
     }, 3000);
 
-    return () => clearInterval(timer); // Cleanup
+    return () => clearInterval(timer); 
   }, []);
 
   const goToPrevious = () => {
@@ -127,7 +126,7 @@ export function AboutPage() {
                   <li>
                     <p className="font-semibold">
                       Associate Software Engineer, Techaffinity, Bangalore{" "}
-                      <span className="font-normal">(Nov 2024 – Present)</span>
+                      <span className="font-normal">(May 2024 – Present)</span>
                     </p>
                     <p>
                       Delivered responsive dashboards, secure APIs, and
@@ -137,7 +136,7 @@ export function AboutPage() {
                   <li>
                     <p className="font-semibold">
                       Full Stack Developer Intern, Techaffinity, Trichy{" "}
-                      <span className="font-normal">(May 2024 – Oct 2024)</span>
+                      <span className="font-normal">(Feb 2024 – Apr 2024)</span>
                     </p>
                     <p>
                       Built a Kiosk System and a Book Store Management System
