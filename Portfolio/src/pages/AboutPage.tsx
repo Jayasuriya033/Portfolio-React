@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
 import { useInView } from "react-intersection-observer";
+import React, { useEffect, useState } from 'react';
+
 
 export function AboutPage() {
   const [selectedTab, setSelectedTab] = useState("Experience");
@@ -15,6 +16,31 @@ export function AboutPage() {
   };
 
   const tabs = ["Experience", "Education", "Certification"];
+  const images = [
+    '/assets/profile.webp',
+    '/assets/portfolio.jpg',
+    '/assets/profile.webp',
+  ];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Auto-slide every 3 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000);
+
+    return () => clearInterval(timer); // Cleanup
+  }, []);
+
+  const goToPrevious = () => {
+    if (currentIndex > 0) setCurrentIndex(currentIndex - 1);
+  };
+
+  const goToNext = () => {
+    if (currentIndex < images.length - 1) setCurrentIndex(currentIndex + 1);
+  };
 
   return (
     <section id="about" className="py-10 bg-gradient-to-b from-muted/30 to-background pt-20 sm:pt-50">
@@ -41,8 +67,8 @@ export function AboutPage() {
           >
             <div className="relative w-60 h-60 sm:w-[80%] sm:h-[90%] md:w-[100%] md:h-[70%] md:-mt-64 lg:w-[100%] lg:h-[80%] lg:-mt-24 xl:w-[90%] xl:h-[90%] xl:-mt-5">
               <img
-                src="/assets/profile.webp"
-                alt="Jayasuriya"
+                src={images[currentIndex]}
+                alt={`Slide ${currentIndex + 1}`}
                 className="w-full h-full object-cover rounded-lg shadow-lg border-4 border-primary"
               />
             </div>
