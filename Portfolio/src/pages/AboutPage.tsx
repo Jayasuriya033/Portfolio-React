@@ -21,7 +21,6 @@ export function AboutPage() {
     '/assets/profile-0.jpg',
     '/assets/profile-4.jpg',
     '/assets/profile-2.jpg',
-    // '/assets/profile-3.jpg',
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -77,6 +76,15 @@ export function AboutPage() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -40 }}
                   transition={{ duration: 0.5 }}
+                  drag="x"
+                  dragConstraints={{ left: 0, right: 0 }}
+                  onDragEnd={(event, info) => {
+                    if (info.offset.x < -50) {
+                      setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+                    } else if (info.offset.x > 50) {
+                      setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+                    }
+                  }}
                 />
               </AnimatePresence>
             </div>
