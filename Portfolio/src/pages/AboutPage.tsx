@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 
 export function AboutPage() {
@@ -23,24 +23,31 @@ export function AboutPage() {
     '/assets/profile-2.jpg',
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
+  const intervalRef = useRef<number | null>(null);
 
   useEffect(() => {
-    const timer = setInterval(() => {
+    startAutoSlide();
+    return () => clearAutoSlide();
+  }, []);
+
+
+  const clearAutoSlide = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  };
+
+
+  const startAutoSlide = () => {
+    clearAutoSlide();
+    intervalRef.current = setInterval(() => {
       setCurrentIndex((prevIndex) =>
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
     }, 5000);
+  };
 
-    return () => clearInterval(timer); 
-  }, []);
-
-  // const goToPrevious = () => {
-  //   if (currentIndex > 0) setCurrentIndex(currentIndex - 1);
-  // };
-
-  // const goToNext = () => {
-  //   if (currentIndex < images.length - 1) setCurrentIndex(currentIndex + 1);
-  // };
 
   return (
     <section id="about" className="py-10 bg-gradient-to-b from-muted/30 to-background pt-20 sm:pt-50">
@@ -78,11 +85,19 @@ export function AboutPage() {
                   transition={{ duration: 0.5 }}
                   drag="x"
                   dragConstraints={{ left: 0, right: 0 }}
-                  onDragEnd={(event, info) => {
+                  onDragEnd={(_event, info) => {
                     if (info.offset.x < -50) {
-                      setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+                      setCurrentIndex((prev) => {
+                        const next = prev === images.length - 1 ? 0 : prev + 1;
+                        startAutoSlide(); 
+                        return next;
+                      });
                     } else if (info.offset.x > 50) {
-                      setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+                      setCurrentIndex((prev) => {
+                        const prevIdx = prev === 0 ? images.length - 1 : prev - 1;
+                        startAutoSlide(); 
+                        return prevIdx;
+                      });
                     }
                   }}
                 />
