@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { Button } from "../components/ui/Button"
 import { Badge } from "../components/ui/Badge"
-import { Github, ExternalLink, ArrowRight } from "lucide-react"
+import { Github, ExternalLink} from "lucide-react"
 
 const projects = [
   {
@@ -68,6 +68,16 @@ const projects = [
     github: "https://github.com/Jayasuriya033/Error-Handling",
     demo: "#",
     category: "backend",
+  },
+  {
+    id: 7,
+    title: "Budget Tracker",
+    description: "A simple budget tracker to manage your expenses and income. Track your financial health easily.",
+    image: "/assets/budgetTracker.png",
+    technologies: ["React", "Typescript", "Javascript","Node", "express", "Mysql", "Prisma", "Tailwind CSS"],
+    github: "https://github.com/Jayasuriya033/Budgets-Tracker.git",
+    demo: "https://budgets-tracker.vercel.app/",
+    category: "fullstack",
   },
 ]
 
@@ -181,15 +191,6 @@ export function ProjectsPage() {
                       <ExternalLink className="h-6 w-6" />
                     </motion.a>
                   </div>
-
-                  <motion.div
-                    className="flex items-center text-sm text-primary font-medium mt-4"
-                    initial={{ x: -10 }}
-                    whileHover={{ x: 0 }}
-                  >
-                    View Details
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </motion.div>
                 </div>
               </motion.div>
             ))}
